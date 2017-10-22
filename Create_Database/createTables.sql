@@ -1,7 +1,7 @@
 
 -- create database miku
 -- go
-use miku
+use stu
 go
 
 create table TAB1(
@@ -12,7 +12,7 @@ COL4 numeric(10,3),
 COL5 decimal(5,2)
 );
  
-create table Student /* Ñ§Éú±í */
+create table Student /* å­¦ç”Ÿè¡¨ */
 (Sno char(20) primary key,
 Sname char(20) unique,
 Ssex char(2),
@@ -20,22 +20,22 @@ Sage smallint,
 Sdept char(20)
 );
 
-create table Course /* ¿Î³Ì±í */
+create table Course /* è¯¾ç¨‹è¡¨ */
 (Cno char(4) primary key,
-Cname char(40) not null, /* ÁĞ¼¶ÍêÕûĞÔÔ¼ÊøÌõ¼ş Cname²»ÄÜÈ¡¿ÕÖµ */
+Cname char(40) not null, /* åˆ—çº§å®Œæ•´æ€§çº¦æŸæ¡ä»¶ Cnameä¸èƒ½å–ç©ºå€¼ */
 Cpno char(4), 
-/* Cpno µÄº¬ÒåÊÇÏÈĞŞ¿Î */
+/* Cpno çš„å«ä¹‰æ˜¯å…ˆä¿®è¯¾ */
 Credit smallint,
-Foreign key(Cpno) references Course(Cno) /* Cpno ÊÇÍâÂë,±»²ÎÕÕ±íÊÇCourse, ±»²ÎÕÕÁĞÊÇCno */
+Foreign key(Cpno) references Course(Cno) /* Cpno æ˜¯å¤–ç ,è¢«å‚ç…§è¡¨æ˜¯Course, è¢«å‚ç…§åˆ—æ˜¯Cno */
 );
 
 
-create table SC /* Ñ§ÉúÑ¡¿Î±í */
+create table SC /* å­¦ç”Ÿé€‰è¯¾è¡¨ */
 (
   Sno char(20),
   Cno char(4),
   Grade smallint,
-  primary key(Sno,Cno), /* Ö÷¼üÓÉÁ½¸öÊôĞÔ¹¹³É */
+  primary key(Sno,Cno), /* ä¸»é”®ç”±ä¸¤ä¸ªå±æ€§æ„æˆ */
   foreign key(Sno) references Student(Sno),
   foreign key(Cno) references Course(Cno)
 );
