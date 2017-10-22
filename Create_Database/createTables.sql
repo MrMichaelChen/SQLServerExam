@@ -1,6 +1,3 @@
-
--- create database miku
--- go
 use stu
 go
 
