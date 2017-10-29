@@ -1,0 +1,1 @@
+DROP INDEX ix_kcm1 ON course
