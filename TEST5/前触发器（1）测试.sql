@@ -1,0 +1,1 @@
+INSERT INTO Student VALUES('2','²»¶þ³¼','ÄÐ',22,'TM')

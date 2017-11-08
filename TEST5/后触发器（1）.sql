@@ -1,0 +1,14 @@
+CREATE TRIGGER  triSdept1 ON Student
+AFTER UPDATE,INSERT
+AS
+BEGIN TRANSACTION
+BEGIN
+  DECLARE @newSdept CHAR(20);
+  SELECT @newSdept=Sdept FROM inserted
+	IF NOT(@newSdept IN ('CS','IS','MA'))
+  BEGIN
+     PRINT 'Sdept只能是(IS,MA,CS)三种'
+     ROLLBACK TRANSACTION
+  END
+END
+UPDATE Student SET Sdept='CS'
